@@ -113,7 +113,7 @@ public class FloatLabelTextField: UIView , UITextFieldDelegate {
     
     inputPlaceholder.text = self.placeholder
     inputPlaceholder.font = UIFont(name: "Roboto-Regular", size: 12)
-    inputPlaceholder.textColor = UIColor.init(colorLiteralRed: 0.757, green: 0.757, blue: 0.757, alpha: 1.00)
+    inputPlaceholder.textColor = UIColor(red: 0.757, green: 0.757, blue: 0.757, alpha: 1.00)
     inputPlaceholder.backgroundColor = UIColor.clear
     
     self.addSubview(customInputContainer)
@@ -180,7 +180,7 @@ public class FloatLabelTextField: UIView , UITextFieldDelegate {
   }
   
   public func textFieldDidEndEditing(_ textField: UITextField) {
-    if ((textField.text?.characters.count)! < 1) {
+    if ((textField.text?.count)! < 1) {
       fadeIn(viewToFadeIn: inputPlaceholder)
       fadeOut(viewToFadeOut: inputLabelView)
     }

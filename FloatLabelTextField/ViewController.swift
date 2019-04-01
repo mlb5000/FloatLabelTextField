@@ -27,9 +27,9 @@ class ViewController: UIViewController, FloatLabelTextFieldDelegate {
     let inputWidth = formWidth - CGFloat(borderWidth * 2)
     
     super.viewDidLoad()
-    view.backgroundColor = UIColor.init(colorLiteralRed: 0.965, green: 0.965, blue: 0.965, alpha: 1.00)
+    view.backgroundColor = UIColor(red: 0.965, green: 0.965, blue: 0.965, alpha: 1.00)
     
-    formContainer.layer.borderColor = UIColor.init(colorLiteralRed: 0.627, green: 0.627, blue: 0.627, alpha: 1.00).cgColor
+    formContainer.layer.borderColor = UIColor(red: 0.627, green: 0.627, blue: 0.627, alpha: 1.00).cgColor
     formContainer.layer.borderWidth = CGFloat(borderWidth)
     formContainer.layer.cornerRadius = 2
     formContainer.backgroundColor = UIColor.white
@@ -72,7 +72,7 @@ class ViewController: UIViewController, FloatLabelTextFieldDelegate {
     switch textField.tag {
     case jginput.tag:
       var textAfterUpdate = (jginput.text as NSString).replacingCharacters(in: range, with: string)
-      isValid = textAfterUpdate.characters.count <= 7
+      isValid = textAfterUpdate.count <= 7
       if (isValid) {
         jginput.isValid = true
         jginput.errorText = ""
@@ -105,9 +105,9 @@ class ViewController: UIViewController, FloatLabelTextFieldDelegate {
   public func textFieldDidBeginEditing(_ textField: UITextField) {
     switch textField.tag {
     case jginput.tag:
-      jginput.labelColor = UIColor.init(colorLiteralRed: 0.086, green: 0.451, blue: 0.902, alpha: 1.00)
+      jginput.labelColor = UIColor(red: 0.086, green: 0.451, blue: 0.902, alpha: 1.00)
     case jginput2.tag:
-      jginput2.labelColor = UIColor.init(colorLiteralRed: 0.086, green: 0.451, blue: 0.902, alpha: 1.00)
+      jginput2.labelColor = UIColor(red: 0.086, green: 0.451, blue: 0.902, alpha: 1.00)
     default: break
     }
     
